@@ -1,0 +1,19 @@
+{
+  "name": "nodefirstproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloWorldServer.js",
+  "scripts": {
+    "start": "echo 'Launching server' && node helloWorldServer.js",
+    "watch": "echo 'Launching server in watch mode' && nodemon -e js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "one-liner-joke": "^1.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
