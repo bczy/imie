@@ -1,4 +1,5 @@
 import express from 'express';
+import { mySqlConnection } from '../app.js';
 
 export const catsRouter = express.Router();
 
@@ -17,4 +18,20 @@ catsRouter.get('/random', (req, res, next) => {
   const randomIndex = Math.floor(cats.length * Math.random());
   const urlRandom = cats[randomIndex];
   res.json({ urlRandom });
+});
+
+catsRouter.post('/', (req, res, next) => {
+  const { name, url } = req.body;
+  if (!name || !url) {
+    res.status;
+  }
+  mySqlConnection.query(
+    `INSERT INTO \`cats\` (\`name\`, \`url\`) VALUES ('${name}', '${url}');`,
+    function(err, rows, fields) {
+      if (err) throw err;
+      console.log('Id inserted: ', rows.insertId);
+      res.json({ id: rows.insertId });
+      res.end();
+    }
+  );
 });
