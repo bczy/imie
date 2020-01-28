@@ -24,4 +24,6 @@ console.log(division(4, 2.3) + additionArrondie(1, 1.2) + soustractionArrondie(4
 
 //on peut importer la fonction par defaut et toutes les autres
 import division, * as autreOperations from './monModuleDeMaths';
-console.log(division(45,6) + autreOperations.)
+console.log(division(45,6) + autreOperations.additionArrondie(1.2,3))
+
+
