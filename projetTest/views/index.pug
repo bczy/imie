@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  div
+    img(id="catImage")
+  button(type="button" onClick="javascript:getCat()" class="btn btn-primary") Click me!
