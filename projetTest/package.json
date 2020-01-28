@@ -1,9 +1,11 @@
 {
   "name": "projettest",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
-    "watch": "echo 'Launching server in watch mode...' && DEBUG=projettest:* && nodemon -e js",
+    "watch": "echo 'Launching server in watch mode...' && DEBUG=projettest:* && nodemon -e js  --experimental-modules ",
     "start": "node ./bin/www"
   },
   "dependencies": {
