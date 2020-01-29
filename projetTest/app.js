@@ -11,6 +11,9 @@ import { catsRouter } from './routes/cats.js';
 
 const app = express();
 
+// parse application/json
+app.use(bodyParser.json());
+
 const __dirname = path.resolve(path.dirname(''));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,15 +44,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-// parse application/json
-app.use(bodyParser.json());
-
 export const mySqlConnection = mysql.createConnection({
   //ONLY FOR MAMP AND MAC OS X USERS!!!
   socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock', //path to mysql sock in MAMP
   host: 'localhost',
   user: 'trambz',
   password: 'toto',
+  multipleStatements: true,
   database: 'cats'
 });
 
