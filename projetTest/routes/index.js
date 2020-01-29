@@ -3,5 +3,5 @@ import express from 'express';
 export const indexRouter = express.Router();
 
 indexRouter.get('/', (req, res) => {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express cat library' });
 });

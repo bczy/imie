@@ -1,16 +1,17 @@
 extends layout
 
 block content
-  h1 Cat detail
-    div
-      p Name: #{cat.name}
-    div
-      img(src=cat.url)
-    if (previousId)
-      a(class='btn btn-primary' href=`/cats/${previousId}`) Previous
-    else
-      a(class='btn btn-primary disabled' aria-disabled="true") Previous
-    if (nextId)
-      a(class='btn btn-primary'  href=`/cats/${nextId}`) Next
-    else
-      a(class='btn btn-primary' aria-disabled="true") Next
+  div(style="margin:30px 0")
+    span Name: #{cat.name}
+    span(style="float:right")
+      if (previousId)
+        a(class='btn btn-primary' href=`/cats/${previousId}`) Previous
+      else
+        a(class='btn btn-primary disabled' aria-disabled="true") Previous
+      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      if (nextId)
+        a(class='btn btn-primary'  href=`/cats/${nextId}`) Next
+      else
+        a(class='btn btn-primary disabled' aria-disabled="true") Next
+  div
+    img(src=cat.url)
