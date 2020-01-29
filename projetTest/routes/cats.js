@@ -27,9 +27,8 @@ catsRouter.post('/', (req, res, next) => {
   }
   mySqlConnection.query(
     `INSERT INTO \`cats\` (\`name\`, \`url\`) VALUES ('${name}', '${url}');`,
-    function(err, rows, fields) {
+    (err, rows, fields) => {
       if (err) throw err;
-      console.log('Id inserted: ', rows.insertId);
       res.json({ id: rows.insertId });
       res.end();
     }

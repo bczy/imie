@@ -53,7 +53,7 @@ export const mySqlConnection = mysql.createConnection({
   database: 'cats'
 });
 
-mySqlConnection.connect(function(err) {
+mySqlConnection.connect(err => {
   if (err) throw err;
   else {
     app.listen(3000, () => {
