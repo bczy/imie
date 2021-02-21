@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form(action="/cats", method="post")
+    div(class="form-group")
+      label(for="name") Nom du chat
+      input(type="text", name="name" class="form-control")
+    div(class="form-group")
+      label(for="url") Url de la photo du chat
+      input(type="text", name="url" class="form-control")
+    div
+      button(type="submit" class="btn btn-primary") Ajouter

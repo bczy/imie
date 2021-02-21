@@ -9,4 +9,12 @@ html
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6", crossorigin="anonymous")
     script(src="/javascripts/getRandomCat.js")
   body
+    h1= title
+    ul(class="nav")
+      li(class="nav-item")
+        a(href="/" class="nav-link") Home
+      li(class="nav-item")
+        a(href="/cats/browse" class="nav-link") Browse cats
+      li(class="nav-item" class="nav-link")
+        a(href="/cats/") Add a cat
     block content

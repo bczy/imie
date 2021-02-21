@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  p Welcome to the Express cat library
+  div(style="margin:10px 0")
+    button(type="button" onClick="javascript:getRandomCat()" class="btn btn-primary") Another random cat
   div
-    img(id="catImage")
-  button(type="button" onClick="javascript:getRandomCat()" class="btn btn-primary") Click me!
+    img(id="catImage" width="400px")
+  

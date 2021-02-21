@@ -3,11 +3,16 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import mysql from 'mysql';
+import bodyParser from 'body-parser';
 
 import { indexRouter } from './routes/index.js';
 import { catsRouter } from './routes/cats.js';
 
 const app = express();
+
+// parse application/json
+app.use(bodyParser.json());
 
 const __dirname = path.resolve(path.dirname(''));
 // view engine setup
@@ -39,6 +44,21 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, () => {
-  console.log('Server listening...');
+export const mySqlConnection = mysql.createConnection({
+  //ONLY FOR MAMP AND MAC OS X USERS!!!
+  socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock', //path to mysql sock in MAMP
+  host: 'localhost',
+  user: 'trambz',
+  password: 'toto',
+  multipleStatements: true,
+  database: 'cats'
+});
+
+mySqlConnection.connect(err => {
+  if (err) throw err;
+  else {
+    app.listen(3000, () => {
+      console.log('Server listening...');
+    });
+  }
 });
